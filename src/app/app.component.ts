@@ -63,4 +63,5 @@ export class AppComponent {
     const index = this.todoArray.indexOf(todo);
     this.todoArray.splice(index, 1);
   }
+
 }
