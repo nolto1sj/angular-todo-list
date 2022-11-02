@@ -12,8 +12,11 @@
       <tbody>
         <tr class="container" *ngFor="let todo of returnsTodo(); let i = index">
           <td>
-            {{ i + 1 }}. <button *ngIf="!this.todo.completed" (click)="completeTask(todo)">Complete</button>
-            {{ todo.task }}
+            {{ i + 1 }}.
+            <button mat-raised-button color="primary" *ngIf="!this.todo.completed" (click)="completeTask(todo)">
+              Complete
+            </button>
+            {{ todo.task }} <button mat-icon-button color="warn" (click)="removeTask(todo)"><mat-icon>close</mat-icon></button>
           </td>
         </tr>
       </tbody>
@@ -21,9 +24,9 @@
   </div>
 
   <div id="add=todo-container">
-    <form #todoForm="ngForm"   (ngSubmit)="addTask(todoForm)">
-         <input name="input" placeholder="New Task" ngModel>
-        <button type="submit">Add</button>
+    <form #todoForm="ngForm" (ngSubmit)="addTask(todoForm)">
+      <input name="input" placeholder="New Task" ngModel />
+      <button mat-button color="primary" type="submit">Add</button>
     </form>
   </div>
 </div>

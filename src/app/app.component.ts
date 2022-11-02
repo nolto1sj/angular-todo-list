@@ -58,4 +58,9 @@ export class AppComponent {
   completeTask(todo: Todo): void {
     todo.completed = true;
   }
+
+  removeTask(todo: Todo): void {
+    const index = this.todoArray.indexOf(todo);
+    this.todoArray.splice(index, 1);
+  }
 }
